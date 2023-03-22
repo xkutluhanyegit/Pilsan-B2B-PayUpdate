@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "BdtHJiYrV/K9zoeCLdB0uRPxipRg8PlpARx9XpfpWgk=",
+  "Source": "B2B",
+  "BasePath": "_content/B2B",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "B2B/wwwroot",
+      "Source": "B2B",
+      "ContentRoot": "/Users/kutluhanyegit/Desktop/B2B/wwwroot/",
+      "BasePath": "_content/B2B",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/kutluhanyegit/Desktop/B2B/wwwroot/favicon.ico",
+      "SourceId": "B2B",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/kutluhanyegit/Desktop/B2B/wwwroot/",
+      "BasePath": "_content/B2B",
+      "RelativePath": "favicon.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/favicon.ico"
+    }
+  ]
+}

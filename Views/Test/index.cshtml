@@ -1,0 +1,310 @@
+@section Deneme{
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+    crossorigin="anonymous"></script>
+
+<script>
+
+    $('#InstallmentCount2 label').click(function (e) {
+        $('#InstallmentCount2 label').css('cursor', 'pointer');
+        $(this).find(':radio').prop('checked', true);
+    })
+
+    $(function () {
+        $('#AccountingCode2').on('change', function (e) {
+            var valueSelected = this.value;
+            $("#AccountingCode option[value='" + valueSelected + "']").attr("selected", "selected");
+            $("#AccountingCode").val(valueSelected);
+
+        });
+    })
+
+    $(function () {
+        $('#Amount2').keyup(function () {
+            var value = $(this).val();
+            $('#Amount').val(value);
+        }).keyup();
+
+        $('#DecimalAmount2').keyup(function () {
+            var value = $(this).val();
+            $('#DecimalAmount').val(value);
+        }).keyup();
+    })
+
+    $(function () {
+        $('#CardholderName2').keyup(function () {
+            var value = $(this).val();
+            $('#CardholderName').val(value);
+        }).keyup();
+    })
+
+    $(function () {
+        $('#CardNumber2').keyup(function () {
+            var value = $(this).val();
+            $('#CardNumber').val(value);
+
+            var n = $('#CardNumber2').val().length;
+
+            if (n >= 7) {
+                //Taksit Seçeneklerini Yakala
+
+            }
+        }).keyup();
+    })
+
+
+    $(function () {
+        $('#ExpireMonth2').on('change', function (e) {
+            var valueSelected = this.value;
+            $("#ExpireMonth option[value='" + valueSelected + "']").attr("selected", "selected");
+            $("#ExpireMonth").val(valueSelected);
+
+        });
+    })
+
+    $(function () {
+        $('#ExpireYear2').on('change', function (e) {
+            var valueSelected = this.value;
+            $("#ExpireYear option[value='" + valueSelected + "']").attr("selected", "selected");
+            $("#ExpireYear").val(valueSelected);
+
+        });
+    })
+
+    $(function () {
+        $('#CardCVC2').keyup(function () {
+            var value = $(this).val();
+            $('#CardCVC').val(value);
+        }).keyup();
+    })
+
+    $(function () {
+        $('#Note2').keyup(function () {
+            var value = $(this).val();
+            $('#Note').val(value);
+        }).keyup();
+    })
+
+
+</script>
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="inputs"><label for="AccountingCode">Cari Bilgisi</label>
+            <select style="width:165px !important" id="AccountingCode" name="AccountingCode">
+                <option value="0">Seçiniz</option>
+                <option value="120 00 10200">Pilsan</option>
+                <option value="120 00 10200 LS">Hasbro</option>
+            </select>
+        </div>
+        <div class="inputs">
+            <label id="amountLabel" for="Amount">Tutar (TL):</label>
+            <input type="hidden" id="CurrencyCodeStr" name="CurrencyCodeStr" value="TL">
+            <input type="number" required="" style="width:165px;height:30px" autocomplete="off" min="0" maxlength="7"
+                data-val="true" data-val-number="The field Tutar must be a number."
+                data-val-required="The Tutar field is required." id="Amount" name="Amount" value="0"
+                aria-describedby="Amount-error" class="valid" aria-invalid="false">
+            <label style="width:5px">,</label>
+            <input type="number" required="" style="width:60px;height:30px" autocomplete="off" min="0" maxlength="2"
+                data-val="true" data-val-number="The field Ondalık Miktar must be a number."
+                data-val-required="The Ondalık Miktar field is required." id="DecimalAmount" name="DecimalAmount"
+                value="0">
+        </div>
+
+        <div id="creditDiv" style="">
+            <div class="inputs">
+                <label for="CardholderName">Kart Sahibi:</label>
+                <input type="text" style="width:165px" autocomplete="off" data-val="true"
+                    data-val-required="Kart sahibinin ismini girin" id="CardholderName" name="CardholderName">
+                <span class="field-validation-valid" data-valmsg-for="CardholderName" data-valmsg-replace="true"></span>
+            </div>
+            <div class="inputs">
+                <label for="CardNumber">Kart Numarası:</label>
+                <input type="number" style="width:165px;height:30px" autocomplete="off" maxlength="22" id="CardNumber"
+                    name="CardNumber">
+                <span class="field-validation-valid" data-valmsg-for="CardNumber" data-valmsg-replace="true"></span>
+            </div>
+            <div class="inputs">
+                <label for="BankCode">Banka Adı:</label>
+                <img id="BankLogo" name="BankLogo">
+                <input type="hidden" id="BankCode" name="BankCode">
+                <input type="hidden" id="Product" name="Product">
+            </div>
+            <div class="inputs date-of-birth">
+                <label for="ExpireMonth">Son Kul. Tarihi :</label>
+                <select style="width:70px" data-val="true" data-val-required="Kart sona erme ayını girin"
+                    id="ExpireMonth" name="ExpireMonth">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                    <option value="5">05</option>
+                    <option value="6">06</option>
+                    <option value="7">07</option>
+                    <option value="8">08</option>
+                    <option value="9">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select> /
+                <select style="width:90px" data-val="true" data-val-required="Kart sona erme yılını girin"
+                    id="ExpireYear" name="ExpireYear">
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                    <option value="2031">2031</option>
+                    <option value="2032">2032</option>
+                    <option value="2033">2033</option>
+                    <option value="2034">2034</option>
+                    <option value="2035">2035</option>
+                    <option value="2036">2036</option>
+                    <option value="2037">2037</option>
+                </select>
+            </div>
+            <div class="inputs">
+                <label for="CardCVC">Kart CVV:</label>
+                <input type="number" style="width:60px;height:30px" autocomplete="off" maxlength="4" data-val="true"
+                    data-val-regex="Kar CVV kodunu girin" data-val-regex-pattern="^[0-9]{3,4}$"
+                    data-val-required="Kar CVV kodunu girin" id="CardCVC" name="CardCVC">
+            </div>
+            <div class="inputs" id="installment">
+                <label for="InstallmentCount">Taksit Sayısı:</label>
+                <select id="InstallmentCount" name="InstallmentCount" style="width:165px" data-val="true"
+                    data-val-required="Taksit sayısı dolu olmalı ve sıfırdan büyük olmalı">
+                    <option value="0">Seçiniz</option>
+                </select>
+            </div>
+            <div class="inputs">
+                <label for="Note">Not:</label>
+                <textarea type="text" maxlength="500" style="width:165px" id="Note" name="Note"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <label for="AccountingCode">Cari Bilgisi</label>
+        <div class="input-group">
+            <select class="form-control" style="width:165px !important" id="AccountingCode2" name="AccountingCode">
+                <option value="0">Seçiniz</option>
+                <option value="120 00 10200">Pilsan</option>
+                <option value="120 00 10200 LS">Hasbro</option>
+            </select>
+        </div>
+
+        <label id="amountLabel" for="Amount">Tutar (TL):</label>
+        <div class="input-group">
+
+
+            <input type="number" required="" style="width:165px;height:30px" autocomplete="off" min="0" maxlength="7"
+                data-val="true" data-val-number="The field Tutar must be a number."
+                data-val-required="The Tutar field is required." id="Amount2" name="Amount2" value="0"
+                aria-describedby="Amount-error" class="valid form-control" aria-invalid="false">
+            <label style="width:5px">,</label>
+            <input class="form-control" type="number" required="" style="width:60px;height:30px" autocomplete="off"
+                min="0" maxlength="2" data-val="true" data-val-number="The field Ondalık Miktar must be a number."
+                data-val-required="The Ondalık Miktar field is required." id="DecimalAmount2" name="DecimalAmount2"
+                value="0">
+        </div>
+
+        <div id="creditDiv" style="">
+            <label for="CardholderName">Kart Sahibi:</label>
+            <div class="input-group">
+                <input class="form-control" type="text" style="width:165px" autocomplete="off" data-val="true"
+                    data-val-required="Kart sahibinin ismini girin" id="CardholderName2" name="CardholderName2">
+                <span class="field-validation-valid" data-valmsg-for="CardholderName" data-valmsg-replace="true"></span>
+            </div>
+
+            <label for="CardNumber">Kart Numarası:</label>
+            <div class="input-group">
+                <input class="form-control" type="number" style="width:165px;height:30px" autocomplete="off"
+                    maxlength="22" id="CardNumber2" name="CardNumber2">
+                <span class="field-validation-valid" data-valmsg-for="CardNumber" data-valmsg-replace="true"></span>
+            </div>
+
+            <label for="ExpireMonth">Son Kul. Tarihi :</label>
+            <div class="input-group date-of-birth">
+                <select class="form-control" style="width:70px" data-val="true"
+                    data-val-required="Kart sona erme ayını girin" id="ExpireMonth2" name="ExpireMonth2">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                    <option value="5">05</option>
+                    <option value="6">06</option>
+                    <option value="7">07</option>
+                    <option value="8">08</option>
+                    <option value="9">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select> /
+                <select class="form-control" style="width:90px" data-val="true"
+                    data-val-required="Kart sona erme yılını girin" id="ExpireYear2" name="ExpireYear2">
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                    <option value="2031">2031</option>
+                    <option value="2032">2032</option>
+                    <option value="2033">2033</option>
+                    <option value="2034">2034</option>
+                    <option value="2035">2035</option>
+                    <option value="2036">2036</option>
+                    <option value="2037">2037</option>
+                </select>
+            </div>
+
+            <label for="CardCVC">Kart CVV:</label>
+            <div class="input-group">
+                <input class="form-control" type="number" style="width:60px;height:30px" autocomplete="off"
+                    maxlength="4" data-val="true" data-val-regex="Kar CVV kodunu girin"
+                    data-val-regex-pattern="^[0-9]{3,4}$" data-val-required="Kar CVV kodunu girin" id="CardCVC2"
+                    name="CardCVC2">
+            </div>
+
+            <label for="InstallmentCount">Taksit Sayısı:</label>
+
+            <div id="InstallmentCount2" class="input-group">
+
+                <label class="w-100 border form-control mt-1" for=""><input type="radio" name="test" value="1"> Tek
+                    Çekim
+
+                </label>
+                <label class="w-100 border form-control mt-1" for=""><input type="radio" name="test" value="2"> 2+4
+                    Taksit </label>
+                <label class="w-100 border form-control mt-1" for=""><input type="radio" name="test" value="3"> 3+4
+                    Taksit </label>
+                <label class="w-100 border form-control mt-1" for=""><input type="radio" name="test" value="4"> 4+4
+                    Taksit </label>
+
+            </div>
+
+
+            <label for="Note">Not:</label>
+            <div class="input-group">
+                <textarea class="form-control" type="text" maxlength="500" style="width:165px" id="Note2"
+                    name="Note2"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
