@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/kutluhanyegit/Desktop/B2B/B2B.csproj",
+      "projectUniqueName": "/Users/kutluhanyegit/Desktop/Pilsan-B2B-PayUpdate/B2B.csproj",
       "projectName": "B2B",
-      "projectPath": "/Users/kutluhanyegit/Desktop/B2B/B2B.csproj",
+      "projectPath": "/Users/kutluhanyegit/Desktop/Pilsan-B2B-PayUpdate/B2B.csproj",
       "packagesPath": "/Users/kutluhanyegit/.nuget/packages/",
-      "outputPath": "/Users/kutluhanyegit/Desktop/B2B/obj/",
+      "outputPath": "/Users/kutluhanyegit/Desktop/Pilsan-B2B-PayUpdate/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/kutluhanyegit/.nuget/NuGet/NuGet.Config"

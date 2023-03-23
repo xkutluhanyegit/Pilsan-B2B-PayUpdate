@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BdtHJiYrV/K9zoeCLdB0uRPxipRg8PlpARx9XpfpWgk=",
+  "Hash": "qQkcCU0TaICYbdp5psFGw51+IfxeUAUxc4fpRdCIZuY=",
   "Source": "B2B",
   "BasePath": "_content/B2B",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "B2B/wwwroot",
       "Source": "B2B",
-      "ContentRoot": "/Users/kutluhanyegit/Desktop/B2B/wwwroot/",
+      "ContentRoot": "/Users/kutluhanyegit/Desktop/Pilsan-B2B-PayUpdate/wwwroot/",
       "BasePath": "_content/B2B",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/Users/kutluhanyegit/Desktop/B2B/wwwroot/favicon.ico",
+      "Identity": "/Users/kutluhanyegit/Desktop/Pilsan-B2B-PayUpdate/wwwroot/favicon.ico",
       "SourceId": "B2B",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kutluhanyegit/Desktop/B2B/wwwroot/",
+      "ContentRoot": "/Users/kutluhanyegit/Desktop/Pilsan-B2B-PayUpdate/wwwroot/",
       "BasePath": "_content/B2B",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
